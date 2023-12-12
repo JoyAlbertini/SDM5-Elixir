@@ -1,2 +1,4 @@
-# SDM5-Elixir
+# SDM Elixir code 
+
+Example of functional programming with elixir 
  
