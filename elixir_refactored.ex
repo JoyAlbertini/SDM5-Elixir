@@ -54,7 +54,16 @@ defmodule WeatherStation do
     IO.puts("High #{direction} wind alert")
   end
   defp analyze_wind(_, _), do: IO.puts("Normal wind conditions")
-end
 
-gg = %WeatherStation{temperature: 25, humidity: 60, pressure: 1015, wind_speed: 10, wind_direction: "NE", timestamp: DateTime.utc_now()}
-alas = analyze_data(gg)
+  def print_analysis(data = %WeatherStation{}) do
+    data
+    |> analyze_data()
+    #|> Enum.each(fn analysis -> IO.puts(analysis) end)
+  end
+
+end
+station = WeatherStation.collect_data(32, 85, 1015, 15, "NE")
+# or
+station = WeatherStation.init_station()
+
+WeatherStation.print_analysis(station)
