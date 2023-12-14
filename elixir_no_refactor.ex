@@ -70,7 +70,5 @@ defmodule WeatherStation do
     "High south wind alert"
   end
 
-
-
 end
 WeatherStation.collect_data(22, 50, 1013, 5, "N")

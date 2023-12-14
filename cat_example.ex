@@ -1,5 +1,5 @@
 defmodule Cat do
-  defstruct age: age, appetite: appetite, weight: weight
+  defstruct age: 0, appetite: "appetite", weight: "weight"
 
   def feed(cat) do
     if cat.age >= 10 do
@@ -51,3 +51,5 @@ defmodule Cat do
     end
   end
 end
+
+Cat.collect_data(2, "strong", "lean")
