@@ -29,6 +29,10 @@ defmodule WeatherStation do
       analyze_wind(data.wind_speed, data.wind_direction)
     ]
   end
+  
+  
+  
+
 
   # Analyze temperature data using multi-clause functions
   defp analyze_temperature(temp) when temp > 30, do: IO.puts("High temperature alert")

@@ -29,6 +29,29 @@ defmodule WeatherStation do
     analyze_wind(data.wind_speed, data.wind_direction)
   end
 
+  
+  
+  defp analyze_temperature(temperature, unit) do
+    celsius_temp = 
+      if unit == "Fahrenheit" do
+        (temperature - 32) * 5 / 9
+      else
+        temperature
+      end
+    if celsius_temp > 30 do
+      IO.puts("High temperature detected")
+    else
+      if celsius_temp < 0 do
+        IO.puts("Low temperature detected")
+      else
+        IO.puts("Temperature is within normal range")
+      end
+    end
+  end
+  
+  
+  
+  
   # Analyze temperature data
   defp analyze_temperature(temperature) when temperature > 30 do
     "High temperature alert"
